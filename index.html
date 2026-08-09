@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#15070d">
+  <title>VOLUNELLE — Maison de Journaux</title>
+  <meta name="description" content="A private digital atelier for designing beautiful journals.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config={theme:{extend:{colors:{ink:'#15070d',merlot:'#4a1027',wine:'#6b1738',gold:'#d9ad69',champagne:'#f3d9ad',ivory:'#f8efe7',rose:'#b96a7e'},fontFamily:{serif:['Cormorant Garamond','Georgia','serif'],sans:['Manrope','Segoe UI','sans-serif'],script:['Allura','cursive']}}}}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient-glow ambient-one"></div><div class="ambient-glow ambient-two"></div>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <button class="brand" data-action="home" aria-label="VOLUNELLE home">
+        <span class="brand-gem">◇</span><span class="brand-name">VOLUNELLE</span><small>MAISON DE JOURNAUX</small>
+      </button>
+      <p class="section-kicker">Your private atelier</p>
+      <nav class="side-nav">
+        <button class="nav-item active" data-panel="journal"><span>♔</span><strong>My Journal</strong><i>01</i></button>
+        <button class="nav-item" data-panel="studio"><span>✦</span><strong>Design Studio</strong><i>02</i></button>
+        <button class="nav-item" data-panel="pages"><span>▱</span><strong>Pages</strong><i>03</i></button>
+        <button class="nav-item" data-panel="artwork"><span>❧</span><strong>Artwork</strong><i>04</i></button>
+        <button class="nav-item" data-panel="typography"><span>Aa</span><strong>Typography</strong><i>05</i></button>
+        <button class="nav-item" data-panel="navigation"><span>◇</span><strong>Navigation</strong><i>06</i></button>
+        <button class="nav-item" data-panel="calendar"><span>□</span><strong>Calendar</strong><i>07</i></button>
+        <button class="nav-item" data-panel="export"><span>↗</span><strong>Preview & Export</strong><i>08</i></button>
+      </nav>
+      <div class="affirmation"><span>♛</span><p>You are creating<br>something timeless.</p><em>Keep going, Queen.</em></div>
+      <button class="profile-card" aria-label="Crown&Craft Studio profile"><span class="avatar">CC</span><span><strong>Crown&amp;Craft Studio</strong><small>VOLUNELLE founder</small></span><b>•••</b></button>
+    </aside>
+
+    <main class="main-stage">
+      <header class="topbar">
+        <div><p class="eyebrow">The private journal atelier</p><h1>Design a journal that tells <em>her</em> story.</h1></div>
+        <div class="top-actions"><button title="Save" data-toast="Journal saved to your atelier">⌑</button><button title="Help">?</button><button title="Notifications">♢</button><button class="portrait" aria-label="Open Crown&amp;Craft Studio profile">CC</button></div>
+      </header>
+
+      <section class="workspace-card">
+        <div class="workspace-toolbar">
+          <div class="page-types" role="tablist" aria-label="Preview page type">
+            <button class="page-type active" data-page="cover">Cover</button><button class="page-type" data-page="divider">Divider</button><button class="page-type" data-page="calendar">Calendar</button><button class="page-type" data-page="entry">Entry</button><button class="page-type" data-page="back">Back</button>
+          </div>
+          <div class="proof-label"><span></span> Private proofing salon</div>
+        </div>
+        <div class="journal-scene" id="journalScene">
+          <img src="assets/atelier-journal.png" alt="Open merlot and ivory journal in a candlelit atelier">
+          <iframe class="asset-pdf-preview" id="assetPdfPreview" title="Uploaded PDF page preview" hidden></iframe>
+          <div class="scene-vignette"></div>
+          <div class="cover-mark" id="coverMark"><span>♛</span><strong>V</strong><small>VOLUNELLE</small></div>
+          <div class="paper-content" id="paperContent"><small>MONTH OF</small><strong>January</strong><i></i></div>
+          <div class="dynamic-page-layer" id="dynamicPageLayer" aria-hidden="true"></div>
+          <div class="month-tabs" aria-label="Month preview tabs"></div>
+          <div class="scene-caption"><span>Currently viewing</span><strong id="currentPageLabel">January · Cover</strong></div>
+        </div>
+        <div class="preview-controls">
+          <button class="fit-control">▣ <span>Fit to view</span>⌄</button>
+          <div class="page-control"><button data-page-step="first">|‹</button><button data-page-step="prev">‹</button><strong><span id="pageNumber">1</span> / <span id="pageTotal">1</span></strong><button data-page-step="next">›</button><button data-page-step="last">›|</button></div>
+          <div class="zoom-control"><button data-zoom="out">−</button><strong id="zoomValue">100%</strong><button data-zoom="in">+</button><button data-toast="Preview centered">⌗</button></div>
+        </div>
+      </section>
+
+      <section class="atelier-strip" aria-label="Quick design tools">
+        <article class="mini-panel studio-mini"><header><span>✦</span><div><strong>Design Studio</strong><small>Create beautifully</small></div><button type="button" data-dashboard-open="studio" aria-label="Open Prompt Atelier">↗</button></header><div class="cover-grid"><button type="button" class="cover-thumb selected" data-design-preset="merlot" aria-label="Maison Merlot preset"></button><button type="button" class="cover-thumb blush" data-design-preset="rosewater" aria-label="Rosewater Editorial preset"></button><button type="button" class="cover-thumb dark" data-design-preset="nocturne" aria-label="Nocturne Bloom preset"></button></div><div class="palette-row"><span id="activePresetName">Maison Merlot</span><div><i style="--swatch:#230711"></i><i style="--swatch:#6c1738"></i><i style="--swatch:#b06779"></i><i style="--swatch:#d6a661"></i><i style="--swatch:#f3ded1"></i></div></div></article>
+        <article class="mini-panel calendar-mini"><header><span>□</span><div><strong>Calendar</strong><small>Plan beautifully</small></div><button type="button" data-dashboard-open="calendar" aria-label="Open Calendar Master Studio">↗</button></header><div class="calendar-card"><div><button type="button" data-mini-month="prev" aria-label="Previous month">‹</button><em id="miniCalendarMonth">January</em><button type="button" data-mini-month="next" aria-label="Next month">›</button></div><div class="week"><b>S</b><b>M</b><b>T</b><b>W</b><b>T</b><b>F</b><b>S</b></div><div class="dates" id="miniDates"></div></div></article>
+        <article class="mini-panel type-mini"><header><span>Aa</span><div><strong>Typography</strong><small>Speak beautifully</small></div><button type="button" data-dashboard-open="typography" aria-label="Open Dynamic Typography">↗</button></header><label>Divider font<select id="quickDividerFont"><option value="serif">Classic Serif</option><option value="sans">Modern Sans</option><option value="typewriter">Editorial Typewriter</option></select></label><label>Calendar font<select id="quickCalendarFont"><option value="serif">Classic Serif</option><option value="sans">Modern Sans</option><option value="typewriter">Editorial Typewriter</option></select></label><p class="script-sample" id="quickTypeSample">January</p><div class="font-colors" aria-label="Typography colors"><button type="button" data-quick-color="#f3e5dc" aria-label="Ivory text"></button><button type="button" data-quick-color="#9e6173" aria-label="Dusty rose text"></button><button type="button" data-quick-color="#501027" aria-label="Merlot text"></button><button type="button" data-quick-color="#cc9652" aria-label="Gold text"></button></div></article>
+        <article class="mini-panel export-mini"><header><span>↗</span><div><strong>Preview & Export</strong><small>Share beautifully</small></div></header><div class="export-types"><button class="active" data-export-mode="pdf">PDF</button><button data-export-mode="goodnotes">GoodNotes</button><button data-export-mode="png">PNG</button></div><label><input type="checkbox" id="includeHyperlinks" checked> Hyperlinks</label><label><input type="checkbox" id="includePageNumbers" checked> Page numbers</label><p class="goodnotes-ready" id="goodnotesReady" hidden>◇ Goodnotes-ready PDF · 4:3 digital paper</p><p class="engine-status" id="pdfEngineStatus">PDF engine · awaiting monthly pages</p><button class="export-button" id="exportJournal">Export Journal <span>↗</span></button></article>
+      </section>
+    </main>
+
+    <aside class="inspector" id="inspector">
+      <div class="inspector-head"><div><p>Journal essentials</p><h2>Begin with intention.</h2></div><button id="closeInspector">×</button></div>
+      <div class="progress"><span style="width:16%"></span></div>
+      <form id="journalForm">
+        <label>Journal title<input id="journalTitle" value="The Art of Becoming"></label>
+        <label>Journal year<input id="journalYear" type="number" min="1900" max="2200" value="2027" inputmode="numeric"></label>
+        <label>Journal type<select><option>Gratitude Journal</option><option>Guided Journal</option><option>Wellness Journal</option><option>Prayer Journal</option></select></label>
+        <label>Who is this journal for?<textarea rows="3">Women creating a more intentional life</textarea></label>
+        <fieldset><legend>Format & size</legend><div class="format-grid"><button type="button" class="format selected" data-format="letter"><strong>8.5 × 11</strong><small>Classic</small></button><button type="button" class="format" data-format="a4"><strong>A4</strong><small>International</small></button><button type="button" class="format" data-format="a5"><strong>A5</strong><small>Intimate</small></button><button type="button" class="format" data-format="goodnotes"><strong>GoodNotes</strong><small>Digital 4:3</small></button></div></fieldset>
+        <fieldset><legend>Orientation</legend><div class="segmented"><button type="button" class="active" data-orientation="portrait">Portrait</button><button type="button" data-orientation="landscape">Landscape</button></div></fieldset>
+        <label>Design collection<select><option>Maison Merlot</option><option>Rosewater Editorial</option><option>Nocturne Bloom</option><option>Ivory Atelier</option></select></label>
+        <fieldset><legend>Collection mood</legend><div class="mood-swatches"><button type="button" class="active" style="--mood:#4b1026"></button><button type="button" style="--mood:#ad6878"></button><button type="button" style="--mood:#e6cfc1"></button><button type="button" style="--mood:#211119"></button><button type="button" style="--mood:#a9865e"></button></div></fieldset>
+        <button type="submit" class="continue">Continue to Design Studio <span>→</span></button>
+      </form>
+      <section class="artwork-panel" id="artworkPanel" hidden>
+        <div class="artwork-intro"><span>04 · THE CANVAS</span><h3>Bring her pages to life.</h3><p>Upload finished page artwork from your computer, tablet, or phone. VOLUNELLE keeps every file private in this browser.</p></div>
+        <section class="prompt-atelier" aria-labelledby="promptAtelierTitle">
+          <div class="prompt-atelier-head"><div><span>◇ CREATIVE CONCIERGE</span><h4 id="promptAtelierTitle">Compose the perfect master-page prompt.</h4></div><small>Artwork first · typography later</small></div>
+          <label>Master page<select id="promptPageType"><option value="front-cover">Front cover</option><option value="divider">Month divider</option><option value="calendar">Calendar</option><option value="entry">Journal entry</option><option value="back-cover">Back cover</option></select></label>
+          <div class="prompt-mode" role="tablist" aria-label="Prompt creation mode"><button type="button" class="active" data-prompt-mode="guided">Guided prompt</button><button type="button" data-prompt-mode="custom">Custom prompt</button></div>
+          <div id="guidedPromptFields">
+            <label>Visual direction<select id="promptStyle"><option value="luxury feminine editorial">Luxury feminine editorial</option><option value="romantic botanical couture">Romantic botanical couture</option><option value="quiet old-money elegance">Quiet old-money elegance</option><option value="modern glamorous minimalism">Modern glamorous minimalism</option><option value="vintage Parisian atelier">Vintage Parisian atelier</option></select></label>
+            <label>Color story<input id="promptPalette" value="Deep merlot, champagne gold, blush rose and warm ivory"></label>
+            <label>Personal direction<textarea id="promptNotes" rows="2" placeholder="Florals, celestial details, Art Deco corners, soft watercolor…"></textarea></label>
+          </div>
+          <div id="customPromptFields" hidden><label>Write your complete design vision<textarea id="customArtworkPrompt" rows="6" placeholder="Describe exactly how you want this page to look. VOLUNELLE will preserve your words and add only the technical master-page requirements."></textarea></label><p>Your creative direction stays exactly as written.</p></div>
+          <button type="button" class="prompt-generate" id="generateArtworkPrompt">Create master-page prompt <span>◇</span></button>
+          <div class="prompt-result" id="promptResult" hidden><label>Your production prompt<textarea id="artworkPromptOutput" rows="8" readonly></textarea></label><p id="promptGuardrail"></p><div><button type="button" id="copyArtworkPrompt">Copy prompt</button><button type="button" id="preparePromptUpload">Use this role & upload</button></div></div>
+        </section>
+        <section class="dynamic-designer" aria-labelledby="dynamicDesignerTitle">
+          <div class="dynamic-head"><div><span>◇ DYNAMIC LAYER</span><h4 id="dynamicDesignerTitle">Place the changing details.</h4></div><small>Preview + PDF</small></div>
+          <div class="dynamic-tabs" role="tablist" aria-label="Dynamic page controls"><button type="button" class="active" data-dynamic-panel="divider">Divider month</button><button type="button" data-dynamic-panel="calendar">Calendar dates</button></div>
+          <div class="dynamic-controls" id="dividerDynamicControls">
+            <div class="control-pair"><label>X position <output id="dividerXValue">50%</output><input id="dividerX" type="range" min="5" max="95" value="50"></label><label>Y position <output id="dividerYValue">50%</output><input id="dividerY" type="range" min="5" max="95" value="50"></label></div>
+            <div class="control-pair"><label>Font size <output id="dividerSizeValue">42 pt</output><input id="dividerSize" type="range" min="18" max="72" value="42"></label><label>Text color<input id="dividerColor" type="color" value="#6b1738"></label></div>
+            <div class="control-pair"><label>Font family<select id="dividerFont"><option value="serif">Classic Serif</option><option value="sans">Modern Sans</option><option value="typewriter">Editorial Typewriter</option></select></label><label>Font weight<select id="dividerWeight"><option value="normal">Regular</option><option value="bold" selected>Bold</option></select></label></div>
+            <div class="control-pair"><label>Alignment<select id="dividerAlign"><option value="left">Left</option><option value="center" selected>Center</option><option value="right">Right</option></select></label><label class="check-control"><input id="dividerShadow" type="checkbox" checked> Soft text shadow</label></div>
+          </div>
+          <div class="dynamic-controls" id="calendarDynamicControls" hidden>
+            <div class="control-pair"><label>Header X <output id="calendarHeaderXValue">50%</output><input id="calendarHeaderX" type="range" min="5" max="95" value="50"></label><label>Header Y <output id="calendarHeaderYValue">10%</output><input id="calendarHeaderY" type="range" min="4" max="35" value="10"></label></div>
+            <div class="control-pair"><label>Header size <output id="calendarHeaderSizeValue">24 pt</output><input id="calendarHeaderSize" type="range" min="14" max="48" value="24"></label><label>Text color<input id="calendarColor" type="color" value="#4a1027"></label></div>
+            <div class="control-pair"><label>Grid X <output id="calendarGridXValue">10%</output><input id="calendarGridX" type="range" min="2" max="35" value="10"></label><label>Grid Y <output id="calendarGridYValue">22%</output><input id="calendarGridY" type="range" min="12" max="55" value="22"></label></div>
+            <div class="control-pair"><label>Grid width <output id="calendarGridWidthValue">80%</output><input id="calendarGridWidth" type="range" min="45" max="96" value="80"></label><label>Grid height <output id="calendarGridHeightValue">62%</output><input id="calendarGridHeight" type="range" min="30" max="78" value="62"></label></div>
+            <div class="control-pair"><label>Font family<select id="calendarFont"><option value="serif">Classic Serif</option><option value="sans">Modern Sans</option><option value="typewriter">Editorial Typewriter</option></select></label><label class="check-control"><input id="calendarGridLines" type="checkbox" checked> Subtle grid lines</label></div>
+          </div>
+          <button type="button" class="dynamic-reset" id="resetDynamicStyle">Reset placement</button>
+        </section>
+        <section class="calendar-master-studio" aria-labelledby="calendarMasterTitle">
+          <div class="calendar-master-head"><div><span>◇ CALENDAR MASTER STUDIO</span><h4 id="calendarMasterTitle">Create the calendar on its own canvas.</h4></div><small>No-crop workflow</small></div>
+          <p>Calendar artwork stays separate from the generated dates so its border and decorative details remain fully visible.</p>
+          <label>Custom calendar design direction<textarea id="calendarCustomDirection" rows="4" placeholder="Describe the frame, florals, colors, corners and mood for this calendar master…"></textarea></label>
+          <div class="calendar-canvas-controls"><label>Artwork fit<select id="calendarArtworkFit"><option value="contain">Fit entire artwork · no crop</option><option value="inset">Fit with printable inset</option><option value="cover">Fill canvas · may crop</option></select></label><label>Printable inset <output id="calendarInsetValue">4%</output><input id="calendarArtworkInset" type="range" min="0" max="12" value="4"></label></div>
+          <label class="calendar-safe-toggle"><input id="showCalendarSafeArea" type="checkbox" checked> Show printable safe-area guide in preview</label>
+          <button type="button" class="calendar-prompt-button" id="prepareCalendarPrompt">Prepare calendar-safe prompt <span>◇</span></button>
+          <div class="calendar-prompt-result" id="calendarPromptResult" hidden><label>Calendar production prompt<textarea id="calendarPromptOutput" rows="7" readonly></textarea></label><div><button type="button" id="copyCalendarPrompt">Copy prompt</button><button type="button" id="uploadCalendarMaster">Upload calendar master</button></div></div>
+        </section>
+        <label class="upload-dropzone" id="uploadDropzone">
+          <input id="artworkInput" type="file" accept="image/png,image/jpeg,image/webp,application/pdf,.png,.jpg,.jpeg,.webp,.pdf" multiple>
+          <span class="upload-gem">◇</span><strong>Choose journal pages</strong><small>PNG, JPG, WEBP or PDF · up to 30 MB each</small><em>Browse files</em>
+        </label>
+        <div class="upload-role-row"><label>Default page role<select id="defaultPageRole"><option value="entry">Journal entry</option><option value="front-cover">Front cover</option><option value="divider">Month divider</option><option value="calendar">Calendar</option><option value="back-cover">Back cover</option><option value="additional">Additional page</option></select></label><button type="button" id="restoreAtelier">Return to atelier preview</button></div>
+        <div class="asset-library-head"><div><strong>Your page library</strong><small id="assetCount">0 pages added</small></div><span>Stored privately</span></div>
+        <div class="asset-library" id="assetLibrary"><div class="empty-library"><span>❧</span><p>Your uploaded pages will appear here.</p></div></div>
+        <p class="storage-note"><span>◇</span> Files stay on this device. Nothing is uploaded to a server.</p>
+      </section>
+      <p class="privacy-note">◇ Your work is saved privately in this browser.</p>
+    </aside>
+  </div>
+  <button class="mobile-inspector-toggle" id="openInspector">Edit journal</button>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
