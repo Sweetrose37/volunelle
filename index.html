@@ -34,13 +34,13 @@
         <button class="nav-item" data-panel="export" aria-label="Preview and Export"><span>↗</span><strong>Preview & Export</strong><i>08</i></button>
       </nav>
       <div class="affirmation"><span>♛</span><p>You are creating<br>something timeless.</p><em>Keep going, Queen.</em></div>
-      <button class="profile-card" aria-label="Crown&Craft Studio profile"><span class="avatar">CC</span><span><strong>Crown&amp;Craft Studio</strong><small>VOLUNELLE founder</small></span><b>•••</b></button>
+      <button class="profile-card" data-action="profile" aria-label="Crown&Craft Studio profile"><span class="avatar">CC</span><span><strong>Crown&amp;Craft Studio</strong><small>VOLUNELLE founder</small></span><b>•••</b></button>
     </aside>
 
     <main class="main-stage">
       <header class="topbar">
         <div><p class="eyebrow">The private journal atelier</p><h1>Design a journal that tells <em>her</em> story.</h1></div>
-        <div class="top-actions"><button title="Save" data-toast="Journal saved to your atelier">⌑</button><button title="Help">?</button><button title="Notifications">♢</button><button class="portrait" aria-label="Open Crown&amp;Craft Studio profile">CC</button></div>
+        <div class="top-actions"><button title="Save" data-action="save" aria-label="Save journal">⌑</button><button title="Help" data-action="help" aria-label="Help">?</button><button title="Notifications" data-action="notifications" aria-label="Notifications">♢</button><button class="portrait" data-action="profile" aria-label="Open Crown&amp;Craft Studio profile">CC</button></div>
       </header>
 
       <section class="workspace-card">
@@ -61,9 +61,9 @@
           <div class="scene-caption"><span>Currently viewing</span><strong id="currentPageLabel">January · Cover</strong></div>
         </div>
         <div class="preview-controls">
-          <button class="fit-control">▣ <span>Fit to view</span>⌄</button>
-          <div class="page-control"><button data-page-step="first">|‹</button><button data-page-step="prev">‹</button><strong><span id="pageNumber">1</span> / <span id="pageTotal">1</span></strong><button data-page-step="next">›</button><button data-page-step="last">›|</button></div>
-          <div class="zoom-control"><button data-zoom="out">−</button><strong id="zoomValue">100%</strong><button data-zoom="in">+</button><button data-toast="Preview centered">⌗</button></div>
+          <button class="fit-control" aria-label="Fit preview to view">▣ <span>Fit to view</span>⌄</button>
+          <div class="page-control"><button data-page-step="first" aria-label="First journal page">|‹</button><button data-page-step="prev" aria-label="Previous journal page">‹</button><strong><span id="pageNumber">1</span> / <span id="pageTotal">1</span></strong><button data-page-step="next" aria-label="Next journal page">›</button><button data-page-step="last" aria-label="Last journal page">›|</button></div>
+          <div class="zoom-control"><button data-zoom="out" aria-label="Zoom out">−</button><strong id="zoomValue">100%</strong><button data-zoom="in" aria-label="Zoom in">+</button><button data-action="center-preview" aria-label="Center preview">⌗</button></div>
         </div>
       </section>
 
@@ -81,12 +81,12 @@
       <form id="journalForm">
         <label>Journal title<input id="journalTitle" value="The Art of Becoming"></label>
         <label>Journal year<input id="journalYear" type="number" min="1900" max="2200" value="2027" inputmode="numeric"></label>
-        <label>Journal type<select><option>Gratitude Journal</option><option>Guided Journal</option><option>Wellness Journal</option><option>Prayer Journal</option></select></label>
-        <label>Who is this journal for?<textarea rows="3">Women creating a more intentional life</textarea></label>
+        <label>Journal type<select id="journalType"><option>Gratitude Journal</option><option>Guided Journal</option><option>Wellness Journal</option><option>Prayer Journal</option></select></label>
+        <label>Who is this journal for?<textarea id="journalAudience" rows="3">Women creating a more intentional life</textarea></label>
         <fieldset><legend>Format & size</legend><div class="format-grid"><button type="button" class="format selected" data-format="letter"><strong>8.5 × 11</strong><small>Classic</small></button><button type="button" class="format" data-format="a4"><strong>A4</strong><small>International</small></button><button type="button" class="format" data-format="a5"><strong>A5</strong><small>Intimate</small></button><button type="button" class="format" data-format="goodnotes"><strong>GoodNotes</strong><small>Digital 4:3</small></button></div></fieldset>
         <fieldset><legend>Orientation</legend><div class="segmented"><button type="button" class="active" data-orientation="portrait">Portrait</button><button type="button" data-orientation="landscape">Landscape</button></div></fieldset>
-        <label>Design collection<select><option>Maison Merlot</option><option>Rosewater Editorial</option><option>Nocturne Bloom</option><option>Ivory Atelier</option></select></label>
-        <fieldset><legend>Collection mood</legend><div class="mood-swatches"><button type="button" class="active" style="--mood:#4b1026"></button><button type="button" style="--mood:#ad6878"></button><button type="button" style="--mood:#e6cfc1"></button><button type="button" style="--mood:#211119"></button><button type="button" style="--mood:#a9865e"></button></div></fieldset>
+        <label>Design collection<select id="designCollection"><option>Maison Merlot</option><option>Rosewater Editorial</option><option>Nocturne Bloom</option><option>Ivory Atelier</option></select></label>
+        <fieldset><legend>Collection mood</legend><div class="mood-swatches"><button type="button" class="active" data-mood="merlot" aria-label="Merlot mood" style="--mood:#4b1026"></button><button type="button" data-mood="rose" aria-label="Rose mood" style="--mood:#ad6878"></button><button type="button" data-mood="ivory" aria-label="Ivory mood" style="--mood:#e6cfc1"></button><button type="button" data-mood="nocturne" aria-label="Nocturne mood" style="--mood:#211119"></button><button type="button" data-mood="gold" aria-label="Antique gold mood" style="--mood:#a9865e"></button></div></fieldset>
         <button type="submit" class="continue">Continue to Design Studio <span>→</span></button>
       </form>
       <section class="artwork-panel" id="artworkPanel" hidden>
