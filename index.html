@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260809-iphone-upload-4">
 </head>
 <body>
   <div class="ambient-glow ambient-one"></div><div class="ambient-glow ambient-two"></div>
@@ -136,6 +136,7 @@
           <span class="upload-gem">◇</span><strong>Choose journal pages</strong><small>PNG, JPG, HEIC, WEBP or PDF · up to 30 MB each</small><em>Browse files</em>
         </label>
         <div class="upload-role-row"><label>Default page role<select id="defaultPageRole"><option value="entry">Journal entry</option><option value="front-cover">Front cover</option><option value="divider">Month divider</option><option value="calendar">Calendar</option><option value="back-cover">Back cover</option><option value="additional">Additional page</option></select></label><button type="button" id="restoreAtelier">Return to atelier preview</button></div>
+        <p class="upload-progress" id="uploadProgress" role="status" aria-live="polite" hidden></p>
         <div class="asset-library-head"><div><strong>Your page library</strong><small id="assetCount">0 pages added</small></div><span>Stored privately</span></div>
         <div class="asset-library" id="assetLibrary"><div class="empty-library"><span>❧</span><p>Your uploaded pages will appear here.</p></div></div>
         <p class="storage-note"><span>◇</span> Files stay on this device. Nothing is uploaded to a server.</p>
@@ -145,6 +146,6 @@
   </div>
   <button class="mobile-inspector-toggle" id="openInspector">Edit journal</button>
   <div class="toast" id="toast" role="status"></div>
-  <script src="app.js"></script>
+  <script src="app.js?v=20260809-iphone-upload-4"></script>
 </body>
 </html>
