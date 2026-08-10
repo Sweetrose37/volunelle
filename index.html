@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260809-journal-types-7">
+  <link rel="stylesheet" href="styles.css?v=20260809-collection-moods-8">
 </head>
 <body>
   <div class="ambient-glow ambient-one"></div><div class="ambient-glow ambient-two"></div>
@@ -87,7 +87,7 @@
         <fieldset><legend>Format & size</legend><div class="format-grid"><button type="button" class="format selected" data-format="letter"><strong>8.5 × 11</strong><small>Classic</small></button><button type="button" class="format" data-format="a4"><strong>A4</strong><small>International</small></button><button type="button" class="format" data-format="a5"><strong>A5</strong><small>Intimate</small></button><button type="button" class="format" data-format="goodnotes"><strong>GoodNotes</strong><small>Digital 4:3</small></button></div></fieldset>
         <fieldset><legend>Orientation</legend><div class="segmented"><button type="button" class="active" data-orientation="portrait">Portrait</button><button type="button" data-orientation="landscape">Landscape</button></div></fieldset>
         <label>Design collection<select id="designCollection"><option>Maison Merlot</option><option>Rosewater Editorial</option><option>Nocturne Bloom</option><option>Ivory Atelier</option></select></label>
-        <fieldset><legend>Collection mood</legend><div class="mood-swatches"><button type="button" class="active" data-mood="merlot" aria-label="Merlot mood" style="--mood:#4b1026"></button><button type="button" data-mood="rose" aria-label="Rose mood" style="--mood:#ad6878"></button><button type="button" data-mood="ivory" aria-label="Ivory mood" style="--mood:#e6cfc1"></button><button type="button" data-mood="nocturne" aria-label="Nocturne mood" style="--mood:#211119"></button><button type="button" data-mood="gold" aria-label="Antique gold mood" style="--mood:#a9865e"></button></div></fieldset>
+        <fieldset><legend>Collection mood</legend><div class="mood-swatches"><button type="button" class="active" data-mood="merlot" aria-label="Merlot mood" title="Merlot" style="--mood:#4b1026"></button><button type="button" data-mood="rose" aria-label="Rose mood" title="Rose" style="--mood:#ad6878"></button><button type="button" data-mood="ivory" aria-label="Ivory mood" title="Ivory" style="--mood:#e6cfc1"></button><button type="button" data-mood="nocturne" aria-label="Nocturne mood" title="Nocturne" style="--mood:#211119"></button><button type="button" data-mood="gold" aria-label="Antique gold mood" title="Antique gold" style="--mood:#a9865e"></button><button type="button" data-mood="sapphire" aria-label="Sapphire mood" title="Sapphire" style="--mood:#233f69"></button><button type="button" data-mood="emerald" aria-label="Emerald mood" title="Emerald" style="--mood:#1e5847"></button><button type="button" data-mood="lavender" aria-label="Lavender mood" title="Lavender" style="--mood:#8d718f"></button></div></fieldset>
         <button type="submit" class="continue">Continue to Design Studio <span>→</span></button>
       </form>
       <section class="artwork-panel" id="artworkPanel" hidden>
@@ -97,7 +97,7 @@
           <label>Master page<select id="promptPageType"><option value="front-cover">Front cover</option><option value="divider">Month divider</option><option value="calendar">Calendar</option><option value="entry">Journal entry</option><option value="back-cover">Back cover</option></select></label>
           <div class="prompt-mode" role="tablist" aria-label="Prompt creation mode"><button type="button" class="active" data-prompt-mode="guided">Guided prompt</button><button type="button" data-prompt-mode="custom">Custom prompt</button></div>
           <div id="guidedPromptFields">
-            <label>Visual direction<select id="promptStyle"><option value="luxury feminine editorial">Luxury feminine editorial</option><option value="romantic botanical couture">Romantic botanical couture</option><option value="quiet old-money elegance">Quiet old-money elegance</option><option value="modern glamorous minimalism">Modern glamorous minimalism</option><option value="vintage Parisian atelier">Vintage Parisian atelier</option></select></label>
+            <label>Visual direction<select id="promptStyle"><option value="luxury feminine editorial">Luxury feminine editorial</option><option value="romantic botanical couture">Romantic botanical couture</option><option value="quiet old-money elegance">Quiet old-money elegance</option><option value="refined luminous minimalism">Refined luminous minimalism</option><option value="modern glamorous minimalism">Modern glamorous minimalism</option><option value="vintage Parisian atelier">Vintage Parisian atelier</option></select></label>
             <label>Color story<input id="promptPalette" value="Deep merlot, champagne gold, blush rose and warm ivory"></label>
             <label>Personal direction<textarea id="promptNotes" rows="2" placeholder="Florals, celestial details, Art Deco corners, soft watercolor…"></textarea></label>
           </div>
@@ -151,6 +151,6 @@
   </div>
   <button class="mobile-inspector-toggle" id="openInspector">Edit journal</button>
   <div class="toast" id="toast" role="status"></div>
-  <script src="app.js?v=20260809-journal-types-7"></script>
+  <script src="app.js?v=20260809-collection-moods-8"></script>
 </body>
 </html>
